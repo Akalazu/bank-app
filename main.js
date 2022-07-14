@@ -141,7 +141,7 @@ function logInOperation() {
     username.textContent = ` ${greet}, ${activeUser.userName.slice(
       0,
       activeUser.userName.indexOf(" ")
-    )}`;
+    )}🔆`;
     summary(activeUser);
   } else {
     Swal.fire({
@@ -215,10 +215,11 @@ let updateTransactionHistory = function (arr) {
 depositBtn.addEventListener("click", () => {
   // let type = "Deposit";
   let typeOfOperation = "Credit";
-  activeUser.transactions.push(Number(amount__deposit.value));
+  var amountToDeposit = Math.abs(Number(amount__deposit.value));
+  activeUser.transactions.push(amountToDeposit);
   Swal.fire({
     title: `Success`,
-    text: `You've successfully deposited ₦${amount__deposit.value} into your account`,
+    text: `You've successfully deposited ₦${amountToDeposit} into your account`,
     icon: "success",
     confirmButtonClass: "btn-success",
   });
@@ -227,7 +228,7 @@ depositBtn.addEventListener("click", () => {
             <th scope="row">${activeUser.transactions.length}</th>
             <td>${activeUser.userName.slice(0)}</td>
             <td>${typeOfOperation}</td>
-            <td>${Number(amount__deposit.value)}</td>
+            <td>${amountToDeposit}</td>
           </tr>`;
   transaction___history.insertAdjacentHTML("afterbegin", htmlDeposit);
   summary(activeUser);
@@ -240,10 +241,11 @@ transferBtn.addEventListener("click", () => {
   // let typeOfOperation = "Transfer";
   let amountToTransfer = -1 * Number(amount___transfer.value);
   receipient = accounts.find(
-    (account) => sendtoUserId.value === account.userId
+    (account) => sendtoUserId.value.toLowerCase().trim() === account.userId
   );
   if (
-    receipient && receipient.userId !== activeUser.userId &&
+    receipient &&
+    receipient.userId !== activeUser.userId &&
     activeUser.balance >= Math.abs(amountToTransfer) &&
     Math.sign(Number(amount___transfer.value)) === 1 &&
     Number(amount___transfer.value) > 0
@@ -267,14 +269,21 @@ transferBtn.addEventListener("click", () => {
             receipient.userName,
           "success"
         );
-      }
-      if (receipient) {
-        activeUser.transactions.push(amountToTransfer);
-        receipient.transactions.push(-1 * amountToTransfer);
-        console.log(receipient);
-        summary(activeUser);
-        updateTransactionHistory(activeUser);
-        receipient.senders.push(activeUser.userName);
+        if (receipient) {
+          activeUser.transactions.push(amountToTransfer);
+          receipient.transactions.push(-1 * amountToTransfer);
+          summary(activeUser);
+          updateTransactionHistory(activeUser);
+          receipient.senders.push(activeUser.userName);
+          amount___transfer.value = "";
+          sendtoUserId.value = "";
+          amount___transfer.blur();
+        }
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        Swal.fire("Cancelled", "Your transaction was canceled", "error");
         amount___transfer.value = "";
         sendtoUserId.value = "";
         amount___transfer.blur();
@@ -286,8 +295,5 @@ transferBtn.addEventListener("click", () => {
       "Transfer cannot be initialized, kindly crosscheck your inputs",
       "warning"
     );
-  }
-  if (!receipient.userId) {
-    alert(receipient);
   }
 });
