@@ -13,7 +13,7 @@ var transaction___history = document.querySelector(".transaction-history");
 var mainContent = document.querySelector(".main-content");
 var sendtoUserId = document.querySelector(".userId");
 const account1 = {
-  userName: "Code Burster",
+  userName: "Akalazu David",
   email: "akalazuD@gmail.com",
   transactions: [1200, -500, 7000, -1500, -100, 100000],
   senders: [],
@@ -54,8 +54,23 @@ const account6 = {
   senders: [],
   passcode: 666,
 };
+const account7 = {
+  userName: "Iwunwa Ngozi",
+  email: "ng777@gmail.com",
+  transactions: [900, 1500, -480, -550, 310, 970],
+  senders: [],
+  passcode: 777,
+};
 let receipient;
-var accounts = [account1, account2, account3, account4, account5, account6];
+var accounts = [
+  account1,
+  account2,
+  account3,
+  account4,
+  account5,
+  account6,
+  account7,
+];
 var senders = [];
 let genUserName = function (acc) {
   acc.forEach((account) => {
@@ -88,9 +103,9 @@ if (hrs < 12) {
 var transactionHistory = function (arr) {
   transaction___history.innerHTML = "";
   arr.transactions.forEach(function (trans, i) {
-    if (i < 6) {
+    if (i <= accounts.length) {
       let injectHTML = `<tr>
-      <th scope="row">${i}</th>
+      <th scope="row">${i + 1}</th>
       <td>${arr.userName}</td>
       <td>${trans > 0 ? "Credit" : "Debit"}</td>
       <td>${trans}</td>
@@ -103,7 +118,7 @@ var transactionHistory = function (arr) {
 };
 loginBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  let inputUserVal = inputUser.value;
+  let inputUserVal = inputUser.value.toLowerCase();
   let inputPasswordVal = Number(inputPassword.value);
   activeUser = accounts.find(
     (account) => account.passcode === inputPasswordVal
