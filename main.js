@@ -103,7 +103,7 @@ if (hrs < 12) {
 var transactionHistory = function (arr) {
   transaction___history.innerHTML = "";
   arr.transactions.forEach(function (trans, i) {
-    if (i <= accounts.length) {
+    if (i < 6) {
       let injectHTML = `<tr>
       <th scope="row">${i + 1}</th>
       <td>${arr.userName}</td>
