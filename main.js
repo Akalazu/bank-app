@@ -198,7 +198,7 @@ function summary(arr) {
 //passes the array of current user gets the last transaction and its index with the receipient
 let updateTransactionHistory = function (arr) {
   let injectHTML = `<tr>
-      <th scope="row">${arr.transactions.length - 1}</th>
+      <th scope="row">${arr.transactions.length}</th>
       <td>${
         receipient?.userName === arr?.userName
           ? arr.senders[arr.senders.length - 1]
@@ -243,7 +243,7 @@ transferBtn.addEventListener("click", () => {
     (account) => sendtoUserId.value === account.userId
   );
   if (
-    receipient.userId !== activeUser.userId &&
+    receipient && receipient.userId !== activeUser.userId &&
     activeUser.balance >= Math.abs(amountToTransfer) &&
     Math.sign(Number(amount___transfer.value)) === 1 &&
     Number(amount___transfer.value) > 0
@@ -286,5 +286,8 @@ transferBtn.addEventListener("click", () => {
       "Transfer cannot be initialized, kindly crosscheck your inputs",
       "warning"
     );
+  }
+  if (!receipient.userId) {
+    alert(receipient);
   }
 });
