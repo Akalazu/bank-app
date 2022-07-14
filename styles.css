@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* height: 100vh; */
+  background-color: #fefdfd;
+  color: #444;
+}
+/*  */
+header {
+  margin-top: 10px;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 2rem; */
+}
+.header-content form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-content input {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  text-align: center;
+  border-radius: 50px;
+  /* padding: 0.7rem 2rem; */
+  font-size: 14px;
+  /* width: 12rem; */
+}
+.header-content input:focus {
+  outline: none;
+}
+.header-content input::placeholder {
+  font-size: 12px;
+  color: inherit;
+  opacity: 0.3;
+}
+.login__btn {
+  padding: 1em 1.5em;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px 0 10px 0;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+}
+.login__btn:hover,
+.login__btn:focus,
+.btn--sort:hover,
+.btn--sort:focus {
+  outline: none;
+  color: #595959;
+}
+.main-content {
+  opacity: 0;
+}
+/*  */
+.account___balance {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.operation {
+  padding: 3rem 30px;
+  border-radius: 15px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+.operations___withdraw {
+  background: linear-gradient(to top left, #39b385, #9be15d);
+}
+.operations___transfer {
+  background: rgb(243, 206, 44);
+  background: linear-gradient(
+    90deg,
+    rgb(237, 207, 73) 0%,
+    rgb(233, 197, 39) 55%
+  );
+}
+input {
+  width: 30%;
+  min-height: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+input::placeholder {
+  font-size: 20px;
+  text-align: center;
+  opacity: 0.4;
+}
+-ms-input::placeholder {
+  text-align: center;
+}
+/* From uiverse.io by @adamgiebl */
+button.send__btn {
+  font-family: inherit;
+  font-size: 18px;
+  background: white;
+  color: black;
+  padding: 0.3em 0.5em;
+  /* padding-left: 0.9em; */
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+button span {
+  display: block;
+  margin-left: 0.1em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(5em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+.all___in .all___in---inner {
+  color: #39b385;
+  font-weight: 600;
+  font-size: 22px;
+}
+footer div {
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.all___out .all___out---inner {
+  font-size: 22px;
+  color: #e52a5a;
+}

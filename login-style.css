@@ -1,0 +1,310 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+  padding: 2rem;
+  background-color: #f3f3f3;
+  columns: #444;
+}
+header {
+  margin-top: 10px;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+img {
+  height: 40px;
+  height: 5.25rem;
+}
+.header-content span {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+.header-content input {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  text-align: center;
+  border-radius: 50px;
+  padding: 0.7rem 2rem;
+  font-size: 1.6rem;
+  width: 12rem;
+}
+.header-content input::placeholder{
+    color: inherit;
+    opacity: 0.3;
+} */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #f3f3f3;
+}
+label {
+  display: none;
+}
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-content {
+  margin: 0 20px;
+  height: 60%;
+  border: 3px solid green;
+}
+.main-content form {
+  padding: 2.5rem;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 1px rgba(29, 29, 29, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+}
+.main-content .input {
+  width: 100%;
+  margin-bottom: 30px;
+  outline: none;
+  border: 2px solid #b3b3b3;
+  background: none;
+  padding: 0.6rem 1.2rem;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  border-radius: 25px;
+  position: relative;
+  transition: 0.3s;
+}
+.main-content p {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.input-container {
+  position: relative;
+  margin: 1rem 0;
+  border: 3px solid green;
+}
+.input-container label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(-50%);
+  font-weight: 400;
+  color:rgb(0, 0, 0);
+  z-index: 900000000;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.btn {
+  padding: 0.6rem 1.3rem;
+  background-color: #fff;
+  border: 2px solid #fafafa;
+  font-size: 0.95rem;
+  color: #1abc9c;
+  line-height: 1;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: transparent;
+} */
+/* dbd8f0 #FCFAFA C8D3D5 */
+* {
+  font-family: "Nunito", sans-serif;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-weight: 300;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: #f3f2f2;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  /* opacity: 0.85; */
+}
+
+label {
+  font-size: 12.5px;
+  color: #000;
+  opacity: 0.8;
+  font-weight: 400;
+}
+.session {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.12);
+}
+form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* min-width: fit-content; */
+  transform: translate(-50%, -50%);
+  padding: 20px 30px;
+  width: 20%;
+  background: #fefefe;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  box-shadow: 0px 0px 46px 10px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 800px) {
+  form {
+    width: fit-content;
+  }
+}
+form h4 {
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+form h4 span {
+  color: black;
+  font-weight: 700;
+}
+form p {
+  line-height: 155%;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #000;
+  opacity: 0.65;
+  font-weight: 400;
+  /* text-align: center; */
+  max-width: 200px;
+  /* width: 100%; */
+  margin-bottom: 40px;
+}
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+.circle-1 {
+  background: linear-gradient(135deg, transparent 20%, #c8d3d5);
+  top: 0;
+  left: 0;
+}
+.circle-2 {
+  background: linear-gradient(135deg, transparent 20%, #c8d3d5);
+  top: 95px;
+  left: 50%;
+}
+.circle-3 {
+  background: linear-gradient(135deg, transparent 20%, #c8d3d5);
+  top: 80%;
+  left: 20%;
+}
+button.login {
+  -webkit-appearance: none;
+  /* width: auto; */
+  text-transform: uppercase;
+  min-width: 100px;
+  border-radius: 24px;
+  text-align: center;
+  padding: 12px 30px;
+  margin-top: 5px;
+  background-color: #b08bf8;
+  color: #000;
+  font-size: 14px;
+  margin-left: auto;
+  font-weight: 500;
+  box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.13);
+  border: none;
+  transition: all 0.3s ease;
+  outline: 0;
+}
+button.login:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 6px -1px rgba(182, 157, 230, 0.65);
+}
+button.login:hover:active {
+  transform: scale(0.99);
+}
+
+input {
+  font-size: 16px;
+  padding: 20px 0px;
+  height: 56px;
+  border: none;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  min-width: 80%;
+  box-sizing: border-box;
+  transition: all 0.3s linear;
+  color: #000;
+  font-weight: 400;
+  -webkit-appearance: none;
+}
+input:focus {
+  border-bottom: solid 1px #b69de6;
+  outline: 0;
+  box-shadow: 0 2px 6px -8px rgba(182, 157, 230, 0.45);
+}
+
+.floating-label {
+  position: relative;
+  margin-bottom: 10px;
+}
+.floating-label label {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.floating-label input:not(:-moz-placeholder-shown) {
+  padding: 28px 0px 12px 0px;
+}
+.floating-label input:not(:-ms-input-placeholder) {
+  padding: 28px 0px 12px 0px;
+}
+.floating-label input:not(:placeholder-shown) {
+  padding: 28px 0px 12px 0px;
+}
+.floating-label input:not(:-moz-placeholder-shown) + label {
+  transform: translateY(-10px);
+  opacity: 0.7;
+}
+.floating-label input:not(:-ms-input-placeholder) + label {
+  transform: translateY(-10px);
+  opacity: 0.7;
+}
+.floating-label input:not(:placeholder-shown) + label {
+  transform: translateY(-10px);
+  opacity: 0.7;
+}
