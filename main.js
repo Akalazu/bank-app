@@ -116,8 +116,7 @@ var transactionHistory = function (arr) {
     }
   });
 };
-loginBtn.addEventListener("click", function (e) {
-  e.preventDefault();
+function logInOperation() {
   let inputUserVal = inputUser.value.toLowerCase();
   let inputPasswordVal = Number(inputPassword.value);
   activeUser = accounts.find(
@@ -153,8 +152,21 @@ loginBtn.addEventListener("click", function (e) {
   }
 
   transactionHistory(activeUser);
+}
+loginBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  logInOperation();
   // updateTransactionHistory(activeUser);
 });
+
+inputPassword.addEventListener("keyup", function (event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    console.log("lol");
+    logInOperation();
+  }
+});
+
 // account1.transactions.forEach(trans, i)
 // var remainingBalance;
 function summary(arr) {
@@ -212,7 +224,7 @@ depositBtn.addEventListener("click", () => {
   });
   // console.log(activeUser.transactions.find(transc => amount__deposit.value));
   let htmlDeposit = `<tr>
-            <th scope="row">${activeUser.transactions.length - 3}</th>
+            <th scope="row">${activeUser.transactions.length}</th>
             <td>${activeUser.userName.slice(0)}</td>
             <td>${typeOfOperation}</td>
             <td>${Number(amount__deposit.value)}</td>
