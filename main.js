@@ -121,6 +121,7 @@ loginBtn.addEventListener("click", function (e) {
     });
     mainContent.style.opacity = "1";
     mainContent.style.transition = "all 1s";
+    inputPassword.blur();
     inputUser.value = "";
     inputPassword.value = "";
     username.textContent = ` ${greet}, ${activeUser.userName.slice(
