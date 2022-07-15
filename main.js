@@ -41,25 +41,25 @@ const account4 = {
   passcode: 444,
 };
 const account5 = {
-  userName: "Williem Smith",
-  email: "williem@gmail.com",
-  transactions: [90, -150, 40, -50, 110, 40],
-  senders: [],
-  passcode: 555,
-};
-const account6 = {
   userName: "Okafor Mmesoma",
   email: "realMmeso@gmail.com",
   transactions: [9, -1500, 480, -510, 1110, 70],
   senders: [],
   passcode: 666,
 };
-const account7 = {
+const account6 = {
   userName: "Iwunwa Ngozi",
   email: "ng777@gmail.com",
   transactions: [900, 1500, -480, -550, 310, 970],
   senders: [],
   passcode: 777,
+};
+const account7 = {
+  userName: "John Doe",
+  email: "johndoe@gmail.com",
+  transactions: [900, 1500, -480, 550, -310, 1970],
+  senders: [],
+  passcode: 888,
 };
 let receipient;
 var accounts = [
