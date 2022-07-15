@@ -15,7 +15,7 @@ var sendtoUserId = document.querySelector(".userId");
 const account1 = {
   userName: "Akalazu David",
   email: "akalazuD@gmail.com",
-  transactions: [1200, -500, 7000, -1500, -100, 100000],
+  transactions: [120000, -500, 70000, -1500, -100, 100000],
   senders: [],
   passcode: 2022,
 };
@@ -156,7 +156,6 @@ function logInOperation() {
 loginBtn.addEventListener("click", function (e) {
   e.preventDefault();
   logInOperation();
-  // updateTransactionHistory(activeUser);
 });
 
 inputPassword.addEventListener("keyup", function (event) {
@@ -168,7 +167,6 @@ inputPassword.addEventListener("keyup", function (event) {
 });
 
 // account1.transactions.forEach(trans, i)
-// var remainingBalance;
 function summary(arr) {
   var remainingBalance = arr.transactions.reduce(
     (acc, curr) => (acc += curr),
@@ -189,11 +187,6 @@ function summary(arr) {
   total___deposit.innerHTML = htmlDeposit;
   total___withdraw.innerHTML = htmlWithdraw;
   acctBalance.innerHTML = htmlAcctBal;
-
-  //   let html = ``
-  //   transaction___history.insertAdjacentHTML("afterbegin", )
-
-  //   // -1100;
 }
 //passes the array of current user gets the last transaction and its index with the receipient
 let updateTransactionHistory = function (arr) {
